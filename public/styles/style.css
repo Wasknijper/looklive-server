@@ -2,6 +2,10 @@ body main {
     padding: 50px;
 }
 
+figure {
+    margin: 0;
+}
+
 body {
     font: 14px Raleway, Helvetica, Arial, sans-serif;
     background-color: #f1f1f1;
@@ -13,7 +17,7 @@ body nav {
     padding: .5em 1em;
 }
 
-body nav .nav-inner img {
+body nav img {
     height: 30px;
     display: block;
     float: left;
@@ -67,14 +71,14 @@ body a {
     color: #00B7FF;
 }
 
-body article {
+body article.item {
     width: 300px;
     height: 600px;
     float: left;
     margin: .5em;
 }
 
-body article img {
+body article.item img {
     max-width: 100%;
 }
 
@@ -82,14 +86,14 @@ body .appearance-right, body .appearance-left {
     float: left;
 }
 
-body article h2 img, body .appearance-right h2 img {
+body article.item h2 img, body .appearance-right h2 img {
     width: 2em;
     height: 2em;
     margin-right: .5em;
     border-radius: 50%;
 }
 
-body article h2, body .appearance h2 {
+body article.item h2, body .appearance h2 {
     font-size: 16px;
 
     display: -webkit-flex;
@@ -101,7 +105,7 @@ body article h2, body .appearance h2 {
     margin-bottom: .5em;
 }
 
-body article h1 {
+body article.item h1 {
     margin-top: 0;
     font-size: 21px;
 }
@@ -134,23 +138,22 @@ body .appearance .appearance-left .product-indicator.product-indicator-active {
     background-color: #b4da55;
 }
 
-body .appearance .appearance-products-inner {
+body .appearance .appearance-products {
     width: 400px;
     position: relative;
     overflow: hidden;
     height: 700px;
 }
 
-body .appearance .appearance-products-inner .product {
+body .appearance .appearance-products .product {
     width: 450px;
     max-width: 100%;
     position: absolute;
-    top: 0;
     left: 100%;
     transition: left .3s;
 }
 
-body .appearance .appearance-products-inner .product.product-active {
+body .appearance .appearance-products .product.product-active {
     left: 0;
 }
 
