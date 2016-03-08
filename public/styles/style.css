@@ -1,5 +1,7 @@
 body main {
     padding: 50px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 figure {
@@ -15,22 +17,28 @@ body {
 body nav {
     background-color: #252525;
     padding: .5em 1em;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
 }
 
 body nav img {
     height: 30px;
-    display: block;
-    float: left;
+}
+
+.logo {
+    width: auto;
+    height: auto;
+    max-height: 30px;
 }
 
 body nav .nav-items {
     list-style: none;
-    float: right;
-    margin: 0 auto;
+    margin: 0;
 }
 
 body nav .nav-items li {
-    float: left;
+    display: inline-block;
     height: 100%;
     line-height: 30px;
     margin-right: 15px;
@@ -43,9 +51,8 @@ body nav .nav-items li a {
 
 body nav .nav-items li a img {
     height: 1em;
-    position: relative;
     margin-right: .3em;
-    top: 6px;
+    vertical-align: middle;
 }
 
 body nav .nav-items li a:hover {
@@ -74,7 +81,6 @@ body a {
 body article.item {
     width: 300px;
     height: 600px;
-    float: left;
     margin: .5em;
 }
 
@@ -96,11 +102,11 @@ body article.item h2 img, body .appearance-right h2 img {
 body article.item h2, body .appearance h2 {
     font-size: 16px;
 
-    display: -webkit-flex;
-    display: flex;
+        display: -webkit-flex;
+        display: flex;
 
-    -webkit-align-items: center;
-    align-items: center;
+        -webkit-align-items: center;
+        align-items: center;
 
     margin-bottom: .5em;
 }
