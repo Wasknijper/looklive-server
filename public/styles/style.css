@@ -59,6 +59,7 @@ nav img {
 .nav-items li a {
     color: white;
     text-decoration: none;
+    will-change: color;
 }
 
 .nav-items li a img {
@@ -175,6 +176,7 @@ header img {
     max-width: 100%;
     position: absolute;
     left: 100%;
+    will-change: transition;
     transition: left .3s;
 }
 
