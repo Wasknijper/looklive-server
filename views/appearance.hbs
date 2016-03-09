@@ -13,9 +13,8 @@
         <h1>Products</h1>
             {{#each products}}
                 <article class="product" data-uuid="{{id}}">
-                    <figure class="actual">
-                        <h1>Actual</h1>
-                        
+                    <h1>Actual</h1>
+                    <figure class="actual">                       
                         <img src="{{image.url}}">
                         
                         <figcaption class="info">
@@ -24,8 +23,8 @@
                         </figcaption>
                     </figure>
                     {{#each similars}}
+                        <h1>{{ similar_type }}</h1>
                         <figure class="similar">
-                            <h1>{{ similar_type }}</h1>
                             <img src="{{image.url}}">
                             <figcaption class="info">
                                 <h1>{{ name }}</h1>
