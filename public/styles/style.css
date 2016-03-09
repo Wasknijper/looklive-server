@@ -1,3 +1,13 @@
+/* ------------------------------------
+    General layouting
+-------------------------------------*/
+
+body {
+    font: 14px Raleway, Helvetica, Arial, sans-serif;
+    background-color: #f1f1f1;
+    margin: 0;
+}
+
 body main {
     padding: 50px;
     display: flex;
@@ -8,13 +18,15 @@ figure {
     margin: 0;
 }
 
-body {
-    font: 14px Raleway, Helvetica, Arial, sans-serif;
-    background-color: #f1f1f1;
-    margin: 0;
+a {
+    color: #00B7FF;
 }
 
-body nav {
+/* ------------------------------------
+    Menu
+-------------------------------------*/
+
+nav {
     background-color: #252525;
     padding: .5em 1em;
     display: flex;
@@ -22,7 +34,7 @@ body nav {
     justify-content: space-between;
 }
 
-body nav img {
+nav img {
     height: 30px;
 }
 
@@ -32,107 +44,111 @@ body nav img {
     max-height: 30px;
 }
 
-body nav .nav-items {
+.nav-items {
     list-style: none;
     margin: 0;
 }
 
-body nav .nav-items li {
+.nav-items li {
     display: inline-block;
     height: 100%;
     line-height: 30px;
     margin-right: 15px;
 }
 
-body nav .nav-items li a {
+.nav-items li a {
     color: white;
     text-decoration: none;
 }
 
-body nav .nav-items li a img {
+.nav-items li a img {
     height: 1em;
     margin-right: .3em;
     vertical-align: middle;
 }
 
-body nav .nav-items li a:hover {
+.nav-items li a:hover {
     color: #d84a4a;
 }
 
-body .clear {
-    clear: both;
-}
+/* ------------------------------------
+    Header
+-------------------------------------*/
 
-body header {
+header {
     width: 100%;
     height: 50vh;
     max-height: 56vw;
     overflow: hidden;
 }
 
-body header img {
+header img {
     width: 100%;
 }
 
-body a {
-    color: #00B7FF;
-}
+/* ------------------------------------
+    Feed
+-------------------------------------*/
 
-body article.item {
+.item {
     width: 300px;
     height: 600px;
     margin: .5em;
 }
 
-body article.item img {
+.item img {
     max-width: 100%;
 }
 
-body article.item h2 img, body .appearance-right h2 img {
+.item h2 img, .appearance-right h2 img {
     width: 2em;
     height: 2em;
     margin-right: .5em;
     border-radius: 50%;
 }
 
-body article.item h2, body .appearance h2 {
+.item h2, .appearance h2 {
     font-size: 16px;
-
-        display: -webkit-flex;
-        display: flex;
-
-        -webkit-align-items: center;
-        align-items: center;
-
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
     margin-bottom: .5em;
 }
 
-body article.item h1 {
+.item h1 {
     margin-top: 0;
     font-size: 21px;
 }
+
+/* ------------------------------------
+    Appearence
+-------------------------------------*/
 
 .appearance {
     display: flex;
     flex-wrap: wrap;
 }
 
-body .appearance h2 {
+.appearance h2 {
     font-size: 21px;
 }
 
-body .appearance .appearance-left {
+
+/* Styles for the appearence img*/
+
+.appearance-left {
     width: 400px;
     height: 600px;
     margin-right: 2em;
     position: relative;
 }
 
-body .appearance-left img {
+.appearance-left img {
     width: 100%;
 }
 
-body .appearance .appearance-left .product-indicator {
+.product-indicator {
     position: absolute;
     width: 20px;
     height: 20px;
@@ -141,18 +157,20 @@ body .appearance .appearance-left .product-indicator {
     border-radius: 50%;
 }
 
-body .appearance .appearance-left .product-indicator.product-indicator-active {
+.product-indicator.product-indicator-active {
     background-color: #b4da55;
 }
 
-body .appearance .appearance-products {
+/*Styles for the detail on the products */
+
+.appearance-products {
     width: 400px;
     position: relative;
     overflow: hidden;
     height: 700px;
 }
 
-body .appearance .appearance-products .product {
+.product {
     width: 450px;
     max-width: 100%;
     position: absolute;
@@ -160,15 +178,16 @@ body .appearance .appearance-products .product {
     transition: left .3s;
 }
 
-body .appearance .appearance-products .product.product-active {
-    left: 0;
-}
-
-body .appearance-products > h1 {
-    font-size: 21px;
-    color: #333;
+.actual, .similar {
+    display: -webkit-flex;
+    display: flex;
+    flex-flow: row;
     padding-bottom: .5em;
     border-bottom: 1px solid #ddd;
+}
+
+.product.product-active {
+    left: 0;
 }
 
 .product img {
@@ -177,18 +196,14 @@ body .appearance-products > h1 {
     max-width: 150px;
 }
 
-body .actual, body .similar {
-    display: -webkit-flex;
-    display: flex;
-    flex-flow: row;
-    padding-bottom: .5em;
-    border-bottom: 1px solid #ddd;
-}
-
-body .actual img{
+.actual img{
     max-width: 200px;
     -webkit-flex-shrink: 0;
     flex-shrink: 0;
+}
+
+.actual img, .similar img {
+    margin-right: 1em;
 }
 
 .product > h1{
@@ -198,17 +213,13 @@ body .actual img{
     border-bottom: none;
 }
 
-body .actual img, body .similar img {
-    margin-right: 1em;
-}
-
-body .actual .info h1, body .similar .info h1 {
+.actual .info h1, .similar .info h1 {
     font-size: 21px;
     margin: 0em 0 .5em 0;
     border-bottom: none;
 }
 
-body .actual .info h2, body .similar .info h2 {
+.actual .info h2, .similar .info h2 {
     font-size: 16px;
     margin: 1em 0;
 }
