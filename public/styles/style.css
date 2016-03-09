@@ -59,7 +59,6 @@ nav img {
 .nav-items li a {
     color: white;
     text-decoration: none;
-    will-change: color;
 }
 
 .nav-items li a img {
