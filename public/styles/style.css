@@ -88,10 +88,6 @@ body article.item img {
     max-width: 100%;
 }
 
-/*body .appearance-right, body .appearance-left {
-    float: left;
-}*/
-
 body article.item h2 img, body .appearance-right h2 img {
     width: 2em;
     height: 2em;
