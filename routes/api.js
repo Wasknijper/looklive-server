@@ -2,7 +2,7 @@ var fs = require('fs');
 var express = require('express');
 var router = express.Router();
 
-router.get('/feed', function(req, res, next) {
+router.get('/feed', function(req, res, next) {    
     sendFile('feed.json', res);
 });
 
