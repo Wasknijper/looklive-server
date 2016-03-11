@@ -5,7 +5,7 @@
 ###Inital timeline
 
 Homepage
-![homepage screenshot](https://raw.githubusercontent.com/wasknijper/looklive-server/blob/student/maaike/timeline-ss/initial-timeline-home.png)
+![homepage screenshot](timeline-ss/initial-timeline-home.png)
 
 Detailpage
 ![detailpage screenshot](https://raw.githubusercontent.com/wasknijper/looklive-server/student/maaike/timeline-ss/initial-timeline-detail.png)
