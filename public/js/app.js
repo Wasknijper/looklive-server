@@ -1,4 +1,4 @@
-(function () {
+var llApp = function () {
     'use strict';
 
     /**
@@ -7,7 +7,14 @@
      * @param  {Function} fn
      * @return {void}
      */
-    function ready(fn) {
+
+    function _processHash() { // Hash-based routing, get the hash and run the router
+		var hash = location.hash || '#';
+		var currentPage = hash.slice(1);
+		router.run(currentPage);
+	}
+
+    function _ready(fn) {
         if (document.readyState !== 'loading') {
             fn();
         } else {
@@ -20,41 +27,36 @@
      *
      * @return {void}
      */
-    function appearance() {
-        var firstProduct = document.querySelector('.product');
-        var firstIndicator = document.querySelector(
-            '.product-indicator[data-uuid="' + firstProduct.getAttribute('data-uuid') + '"]'
-        );
-        var indicators = document.querySelectorAll('.product-indicator');
 
-        firstProduct.classList.add('product-active');
-        firstIndicator.classList.add('product-indicator-active');
+    //lets make some routes
+    var app = {};
+    app.wrapper = '';
+ 	app.feedData = '';
 
-        Array.prototype.forEach.call(indicators, function (el) {
-            el.addEventListener('click', function (event) {
-                var id = event.currentTarget.getAttribute('data-uuid');
+    app.init = function(){
+    	//router.init();
 
-                document
-                    .querySelector('.product-active')
-                    .classList.remove('product-active');
+    	app.wrapper = document.querySelector('main');
 
-                document
-                    .querySelector('.product-indicator-active')
-                    .classList.remove('product-indicator-active');
+    	request.get('http://localhost:3000/api/feed', function(d){
+    		app.feedData = d;
+			_processHash();	
+    	});
 
-                document
-                    .querySelector('.product[data-uuid="' + id + '"]')
-                    .classList.add('product-active');
+	    _ready(function () {
+	        if (/appearance/.test(window.location.href)) {
+	            _appearance();
+	        }
+    	});
 
-                event.currentTarget.classList.add('product-indicator-active');
-            });
-        });
-    }
+    	window.addEventListener('hashchange', _processHash);
+    };
 
-    ready(function () {
-        if (/appearance/.test(window.location.href)) {
-            appearance();
-        }
-    });
+    return app;
+}();
+
+
+(function(){
+	llApp.init();
 }());
 

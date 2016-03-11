@@ -3,7 +3,7 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/feed', function(req, res, next) {    
-    sendFile('feed.json', res);
+//    sendFile('feed.json', res);
 
     //uitgelegd in het werkcollege van woensdag
     fs.readFile('resources/feed.json', 'utf8', function(err, data) {
