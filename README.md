@@ -81,7 +81,7 @@ In een Progressive Web App wordt er gebruik gemaakt van Service Workers en een M
 - Progressive Web Apps kunnen (nog) geen gebruik maken van de nieuwste technieken van devices. Zo kan je bijv. niet bij je adresboek of gebruik maken van de vingerafdruk sensoren. 
 
 
-Bronnen: 
+####Bronnen
 - https://developers.google.com/web/fundamentals/getting-started/your-first-progressive-web-app/?hl=en
 - https://www.youtube.com/watch?v=MyQ8mtR9WxI&list=PLNYkxOF6rcICcHeQY02XLvoGL34rZFWZn&index=9
 - http://developer.telerik.com/featured/what-progressive-web-apps-mean-for-the-web/
