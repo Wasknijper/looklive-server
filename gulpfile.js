@@ -1,3 +1,5 @@
+//i used this tutorial to get started: https://css-tricks.com/gulp-for-beginners/
+
 var gulp = require('gulp');
 var autoprefixer = require('gulp-autoprefixer');
 var concat = require('gulp-concat');
