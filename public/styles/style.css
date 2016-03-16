@@ -157,7 +157,7 @@ header img {
     max-width: 100%;
 }
 
-.item h2 img, .appearance-right h2 img {
+.item h2 img, .product-list h2 img {
     width: 2em;
     height: 2em;
     margin-right: .5em;
@@ -194,14 +194,14 @@ header img {
 
 /* Styles for the appearence img*/
 
-.appearance-left {
+.photo {
     width: 400px;
     height: 600px;
     margin-right: 2em;
     position: relative;
 }
 
-.appearance-left img {
+.photo img {
     width: 100%;
 }
 
@@ -220,7 +220,7 @@ header img {
 
 /*Styles for the detail on the products */
 
-.appearance-products {
+.appearance .products {
     width: 400px;
     position: relative;
     overflow: hidden;
