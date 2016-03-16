@@ -1,32 +1,28 @@
-var gulp = require('gulp'),
-    svgSprite = require('gulp-svg-sprite');
+var gulp = require('gulp');
+var autoprefixer = require('gulp-autoprefixer');
+var concat = require('gulp-concat');
+var uglifyJs = require('gulp-uglify');
+var runSequence = require('run-sequence');
 
-var svgConfig = {
-    dest: '.',
-    shape: {
-        dimension: {
-            maxWidth: 15,
-            maxHeight: 15
-        },
-        spacing: {
-            padding: 1,
-        },
-    },
-    mode: {
-        css: {
-            dest: '.',
-            sprite: 'sprite.svg',
-            render: {
-                css: true
-            },
-            example: true,
-            prefix: '.icn-'
-        }
-    }
-};
+gulp.task('prefix-css', function () {
+    return gulp.src('public/styles/style.css')
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        }))
+        .pipe(gulp.dest('public/styles'));
+});
+ 
+gulp.task('concat-scripts', function() {
+    //manually load the scripts after each other, so we dont get errors
+  return gulp.src(['public/js/libs/rlite.js', 'public/js/request.js', 'public/js/router.js', 'public/js/app.js'])
+    .pipe(uglifyJs())
+    .pipe(concat('main.js'))
+    .pipe(gulp.dest('public/js'));
+});
 
-gulp.task('icons', function () {
-    gulp.src('./public//icons/svg/*.svg')
-        .pipe(svgSprite(svgConfig))
-        .pipe(gulp.dest('./public/icons/sprite/'));
+gulp.task('build', function (callback) {
+  runSequence(['prefix-css','concat-scripts'],
+    callback
+  );
 });
