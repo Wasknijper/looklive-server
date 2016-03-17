@@ -9,7 +9,7 @@ var router = (function(){
 	});
 
 	routes.add('appearance/:id', function(route){
-		request.get('https://localhost:3000/api/appearance/' + route.params.id, function(d){
+		request.get('/api/appearance/' + route.params.id, function(d){
 			llApp.wrapper.innerHTML = d;
 			llApp.appearance();
 		});
