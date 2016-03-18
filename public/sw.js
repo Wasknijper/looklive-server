@@ -18,6 +18,9 @@ this.addEventListener('install', event => {
 	);
 });
 
+//To do: make a page offline, resources: https://jakearchibald.com/2014/offline-cookbook/#cache-falling-back-to-network
+//										 https://googlechrome.github.io/samples/service-worker/custom-offline-page/index.html
+
 this.addEventListener('fetch', event => {
   event.respondWith(
     caches.match(event.request)
