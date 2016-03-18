@@ -12,7 +12,8 @@ this.addEventListener('install', event => {
 	    	return cache.addAll([
 	        	'/',
 	        	'/styles/style.css',
-	        	'/js/main.js'
+	        	'/js/main.js',
+	        	'/images/header.jpg'
 	    	]);
 	    })
 	);
