@@ -69,7 +69,7 @@ var llApp = function () {
 
     	app.wrapper = document.querySelector('main');
 
-    	request.get('http://localhost:3000/api/feed', function(d){
+    	request.get('/api/feed', function(d){
     		app.feedData = d;
 			_processHash();	
     	});
