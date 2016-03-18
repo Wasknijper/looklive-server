@@ -1,9 +1,10 @@
 # MWB - Preformance Matters
-View online: https://pm.maaikehek.nl/
+View online: https://pm.maaikehek.nl/ (Currently running the feature/service-worker branch)
 
 ## Week 1
 
 ###Inital timeline
+This is the page without me editing any of the source material. Homepage was suprisingly fast, normally around 2 seconds.
 
 Homepage
 ![homepage screenshot](timeline-ss/initial-timeline-home.PNG)
@@ -12,6 +13,7 @@ Detailpage
 ![detailpage screenshot](timeline-ss/initial-timeline-detail.PNG)
 
 ###Semantic HTML
+Removing unecessary elements and changed certain classes to html5 elements.
 
 Homepage
 ![homepage screenshot](timeline-ss/001-home.PNG)
@@ -20,6 +22,7 @@ Detailpage
 ![detailpage screenshot](timeline-ss/001-detail.PNG)
 
 ###Removing floats from the css
+Changing all the floats to flexbox, has a small impact on the time.
 
 Homepage
 ![homepage screenshot](timeline-ss/002-noFloats-home.PNG)
@@ -28,6 +31,7 @@ Detailpage
 ![detailpage screenshot](timeline-ss/002-noFloats-detail.PNG)
 
 ###Optimizing the header img
+Roughly 1.9mb to 200kb. I installed some plugins in chrom that added to the time.
 
 Homepage
 ![homepage screenshot](timeline-ss/003-png2jpg-home.PNG)
@@ -36,6 +40,7 @@ Detailpage
 ![detailpage screenshot](timeline-ss/003-png2jpg-detail.PNG)
 
 ###Simplified the css selectors
+Small impact, not really noticeable. Removed uncesecary selecters such as, body #id. #id works just fine.
 
 Homepage
 ![homepage screenshot](timeline-ss/004-simplifyCss-home.PNG)
@@ -44,6 +49,7 @@ Detailpage
 ![detailpage screenshot](timeline-ss/004-simplifyCss-detail.PNG)
 
 ###Sprites VS. Inline SVG
+Tested sprites vs. inline svg. SVG slighlty faster and also more acessible for people who have screenreaders, so I picked inline svg
 
 Sprites
 ![homepage screenshot](timeline-ss/005-sprites-home.PNG)
@@ -52,6 +58,7 @@ Inline SVG
 ![homepage screenshot](timeline-ss/005-inlineSvg-home.PNG)
 
 ###Changed into onepage app
+This made the homepage slower, but the detail page a lot faster.
 
 Homepage
 ![homepage screenshot](timeline-ss/006-onepage.PNG)
