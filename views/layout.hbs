@@ -3,7 +3,7 @@
     <head>
         <title>{{title}}</title>
         <link rel='stylesheet' href='/styles/style.css' />
-        <link href='https://fonts.googleapis.com/css?family=Raleway:400,500,700,800,900,600,300,200,100' rel='stylesheet' type='text/css'>
+        <!-- <link href='https://fonts.googleapis.com/css?family=Raleway:400,500,700,800,900,600,300,200,100' rel='stylesheet' type='text/css'> -->
     </head>
     <body>
         <nav>
@@ -22,4 +22,13 @@
            {{{body}}}
     </body>
     <script src="/js/main.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js', { scope: './' })
+                .then(reg => console.info('registered sw', reg))
+                .catch(err => console.error('error registering sw', err));
+        } else {
+            console.log('Your browser doesnt support service workers :c');
+        }
+    </script>
 </html>
