@@ -4,6 +4,7 @@ View online: https://pm.maaikehek.nl/
 ## Week 1
 
 ###Inital timeline
+Timeline of the orginial code.
 
 Homepage
 ![homepage screenshot](timeline-ss/initial-timeline-home.PNG)
@@ -20,6 +21,7 @@ Detailpage
 ![detailpage screenshot](timeline-ss/001-detail.PNG)
 
 ###Removing floats from the css
+Changed all of the floats to flexbox
 
 Homepage
 ![homepage screenshot](timeline-ss/002-noFloats-home.PNG)
@@ -28,6 +30,7 @@ Detailpage
 ![detailpage screenshot](timeline-ss/002-noFloats-detail.PNG)
 
 ###Optimizing the header img
+.png to jpg, 2~mb > 262kb.
 
 Homepage
 ![homepage screenshot](timeline-ss/003-png2jpg-home.PNG)
@@ -36,6 +39,7 @@ Detailpage
 ![detailpage screenshot](timeline-ss/003-png2jpg-detail.PNG)
 
 ###Simplified the css selectors
+removed unnecessary specific css selecters, ie: body nav #logo > #logo
 
 Homepage
 ![homepage screenshot](timeline-ss/004-simplifyCss-home.PNG)
@@ -44,6 +48,7 @@ Detailpage
 ![detailpage screenshot](timeline-ss/004-simplifyCss-detail.PNG)
 
 ###Sprites VS. Inline SVG
+Tested sprites vs. inline svg. Difference not very noticable, but means less http-requests.
 
 Sprites
 ![homepage screenshot](timeline-ss/005-sprites-home.PNG)
@@ -52,6 +57,7 @@ Inline SVG
 ![homepage screenshot](timeline-ss/005-inlineSvg-home.PNG)
 
 ###Changed into onepage app
+Initial page is a lot slower, but the detail page loads faster.
 
 Homepage
 ![homepage screenshot](timeline-ss/006-onepage.PNG)
