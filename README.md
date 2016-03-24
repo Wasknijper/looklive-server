@@ -99,12 +99,11 @@ In een Progressive Web App wordt er gebruik gemaakt van Service Workers en een M
 #Week 3
 
 ##Task Managers
-
-###Grunt
-
-###Gulp
+De twee meest voorkomende task managers zijn Gulp en Grunt. Ik heb zelf gekozen voor Gulp omdat ik de code makkelijker te begrijpen vind, het sneller is doordat het gebruik maakt van streaming (meerdere tasks kunnen tegelijkertijd uitgevoerd worden). Grunt heeft een grotere community, maar Gulp komt snel in de buurt. Ook maakte mijn stage gebruik van Gulp in combinatie met Webpack, waardoor ik al een beetje ervaring heb met gulp.  
 
 ####Bronnen
+- https://medium.com/@preslavrachev/gulp-vs-grunt-why-one-why-the-other-f5d3b398edc4#.hcpzxbo4d
+- https://css-tricks.com/gulp-for-beginners/
 
 #Timeline screenshots
 
