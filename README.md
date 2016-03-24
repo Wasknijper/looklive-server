@@ -95,3 +95,31 @@ In een Progressive Web App wordt er gebruik gemaakt van Service Workers en een M
 - http://www.emerce.nl/achtergrond/progressive-web-apps-de-toekomst-van-mobiele-apps
 - https://developer.mozilla.org/nl/docs/Web/HTML/Applicatie_cache_gebruiken
 - https://addyosmani.com/blog/getting-started-with-progressive-web-apps/
+
+#Week 3
+
+##Task Managers
+
+###Grunt
+
+###Gulp
+
+####Bronnen
+
+#Timeline screenshots
+
+##Less HTTP-requests & optimizing images
+Hardly any difference noticable, since I only removed one extra call in the head (google-font). I had already merged all the JS into a single file. Also the differnce of optimized images are also not noticable, since I had already shrinked the header images and all the icons are inline. The remaining images are on a remote service and I can't optimize them. Maybe they could be served as a data-uri?
+
+![homepage screenshot](timeline-ss/less-http-req.PNG)
+
+##Async web-font loading
+Using [fontfaceobserver](https://github.com/bramstein/fontfaceobserver) we load the fonts async so the user can still read the content, removing the Flash of Invisible Text.
+
+![homepage screenshot](timeline-ss/async-fonts.PNG)
+
+##Critical CSS
+Using a [critical css generator](https://jonassebastianohlsson.com/criticalpathcssgenerator/) and [loadCSS](https://github.com/filamentgroup/loadCSS) I included the css of above the fold in the head. Makes a lot of difference on low internet speeds.
+
+![homepage screenshot](timeline-ss/cricital-css.PNG)
+
