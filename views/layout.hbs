@@ -2,7 +2,11 @@
 <html>
     <head>
         <title>{{title}}</title>
-        <link rel='stylesheet' href='/production/styles/style.css' />        
+        <style>
+        /*Critical css- https://jonassebastianohlsson.com/criticalpathcssgenerator/*/
+            body main,nav{display:-webkit-flex;display:-ms-flexbox}body{font:14px Helvetica,Arial,sans-serif;background-color:#f1f1f1;margin:0}body main{padding:50px;display:flex;-ms-flex-wrap:wrap;-webkit-flex-wrap:wrap;flex-wrap:wrap}a{color:#00B7FF}nav{background-color:#252525;padding:.5em 1em;display:flex;-webkit-flex-flow:row wrap;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between}nav img{height:30px}.logo{width:auto;height:auto;max-height:30px}header,header img{width:100%}.nav-items{list-style:none;margin:0}.nav-items li{display:inline-block;height:100%;line-height:30px;margin-right:15px}.nav-items li a{color:#fff;text-decoration:none;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-ms-flex-align:center;align-items:center}.nav-items svg{width:100%;height:100%;max-width:1.2em;fill:#fff;margin-right:.3em}header{height:50vh;max-height:56vw;overflow:hidden}
+            </style>
+        <!-- <link rel='stylesheet' href='/production/styles/style.css' />         -->
     </head>
     <body>
         <nav>
@@ -20,8 +24,9 @@
         <header><img src="/production/images/header.jpg"></header> 
            {{{body}}}
     </body>
-    <script src="/production/js/main.js"></script>
     <script>
+        loadCSS('non-critical.css'); 
+    
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('sw.js', { scope: './' })
                 .then(reg => console.info('registered sw', reg))
@@ -29,6 +34,6 @@
         } else {
             console.log('Your browser doesnt support service workers :c');
         }
-</script>
     </script>
+    <script src="/production/js/main.js"></script>
 </html>
