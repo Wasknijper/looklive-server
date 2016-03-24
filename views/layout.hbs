@@ -22,6 +22,12 @@
     </body>
     <script src="/production/js/main.js"></script>
     <script>
+        var observer = new FontFaceObserver('Raleway');
+
+        observer.check().then(function () {
+            document.getElementsByTagName('body')[0].className += "fonts-loaded";
+        });
+
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('sw.js', { scope: './' })
                 .then(reg => console.info('registered sw', reg))

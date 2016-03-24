@@ -19,7 +19,7 @@ gulp.task('css', function () {
  
 gulp.task('concat-scripts', function() {
     //manually load the scripts after each other, so we dont get errors
-  return gulp.src(['public/js/libs/rlite.js', 'public/js/request.js', 'public/js/router.js', 'public/js/app.js'])
+  return gulp.src(['public/js/libs/fontfaceobserver.js','public/js/libs/rlite.js', 'public/js/request.js', 'public/js/router.js', 'public/js/app.js'])
     .pipe(uglifyJs())
     .pipe(concat('main.js'))
     .pipe(gulp.dest('public/production/js'));

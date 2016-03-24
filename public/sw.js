@@ -6,27 +6,41 @@ console.log('started ServiceWorker');
 // this.addEventListener('sync', event => console.log('do sync', event));
 // this.addEventListener('message', event => console.log('message received', event));
 
+const currentCacheName = 'll-app-v1.41';
+
 this.addEventListener('install', event => {
 	event.waitUntil(
-	    caches.open('looklive-v1').then(cache => {
+	    caches.open(currentCacheName).then(cache => {
 	    	return cache.addAll([
-	        	'/',
-	        	'/styles/style.css',
-	        	'/js/main.js',
-	        	'/images/header.jpg',
+	        	'/production/styles/style.css',
+	        	'/production/js/main.js',
+	        	'/production/images/header.jpg',
 	        	//lets cache the fonts
-	        	'/fonts/Raleway-Regular.eot',
-	        	'/fonts/Raleway-Regular.woff',
-	        	'/fonts/Raleway-Regular.ttf',
-	        	'/fonts/Raleway-Regular.svg',
-	        	'/fonts/Raleway-Bold.eot',
-	        	'/fonts/Raleway-Bold.woff',
-	        	'/fonts/Raleway-Bold.ttf',
-	        	'/fonts/Raleway-Bold.svg'
+	        	'/production/fonts/Raleway-Regular.eot',
+	        	'/production/fonts/Raleway-Regular.woff',
+	        	'/production/fonts/Raleway-Regular.ttf',
+	        	'/production/fonts/Raleway-Regular.svg',
+	        	'/production/fonts/Raleway-Bold.eot',
+	        	'/production/fonts/Raleway-Bold.woff',
+	        	'/production/fonts/Raleway-Bold.ttf',
+	        	'/production/fonts/Raleway-Bold.svg'
   
 	    	]);
 	    })
 	);
+});
+
+this.addEventListener('activate', event => {
+  event.waitUntil(
+    caches.keys().then(cacheNames => {
+      return Promise.all(
+        cacheNames
+          .filter(cacheName => (cacheName.startsWith('ll-app-')))
+          .filter(cacheName => (cacheName !== currentCacheName))
+          .map(cacheName => caches.delete(cacheName))
+      );
+    })
+  );
 });
 
 //To do: make a page offline, resources: https://jakearchibald.com/2014/offline-cookbook/#cache-falling-back-to-network
