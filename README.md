@@ -1,44 +1,91 @@
-# LookLive server
+# MWB - Preformance Matters
+View online: https://pm.maaikehek.nl/
 
-The project you're looking at is an [express.js](http://expressjs.com) project. You'll use it to get set up a development environment where you're
-going to optimize the way this project works. In it's current state, the css is messy, the rendering isn't modern and
-overall the product is boring and not efficient. It's up to you to fix this and improve it.
+## Week 1
 
-## Getting started
+###Inital timeline
 
-### Step 1 - clone the repo
-Github provides some instructions for this and we're assuming that you know how to clone this repo. If you're not sure,
-don't hesitate to raise your hand now and ask.
+Homepage
+![homepage screenshot](timeline-ss/initial-timeline-home.PNG)
 
-### Step 2 - install dependencies
-In order to run the server you'll need to install express.js and it's dependencies. In order to do this, open up a 
-terminal and navigate to your project folder (for example `cd ~/Projects/looklive-server`). When you've done this, type
-this command to run the instal:
+Detailpage
+![detailpage screenshot](timeline-ss/initial-timeline-detail.PNG)
 
-```
-npm install
-```
+###Semantic HTML
 
-That should get you setup.
+Homepage
+![homepage screenshot](timeline-ss/001-home.PNG)
 
-### Step 3 - running the server
-To run the server, stay at the 'root' of your project folder and type:
+Detailpage
+![detailpage screenshot](timeline-ss/001-detail.PNG)
 
-```
-npm start
-```
+###Removing floats from the css
 
-That will get the server to run on port 3000. If you go to [http://localhost:3000](http://localhost:3000) in your browser
-you should see an overview page.
+Homepage
+![homepage screenshot](timeline-ss/002-noFloats-home.PNG)
 
-## The api
+Detailpage
+![detailpage screenshot](timeline-ss/002-noFloats-detail.PNG)
 
-This project comes with a simple API. All you need to know for now is that there's three endpoints:
+###Optimizing the header img
 
-* `/api/feed/` <- returns a feed of appearances
-* `/api/appearance/:uuid` <- returns a single appearance, more detailed than in the feed. Replace `:uuid` with the 
-appearance id.
-* `/api/product/:uuid` <- returns a single product, including similar and bargain products. Replace `:uuid` with the 
-product id.
+Homepage
+![homepage screenshot](timeline-ss/003-png2jpg-home.PNG)
 
-The API returns JSON (for now).
+Detailpage
+![detailpage screenshot](timeline-ss/003-png2jpg-detail.PNG)
+
+###Simplified the css selectors
+
+Homepage
+![homepage screenshot](timeline-ss/004-simplifyCss-home.PNG)
+
+Detailpage
+![detailpage screenshot](timeline-ss/004-simplifyCss-detail.PNG)
+
+###Sprites VS. Inline SVG
+
+Sprites
+![homepage screenshot](timeline-ss/005-sprites-home.PNG)
+
+Inline SVG
+![homepage screenshot](timeline-ss/005-inlineSvg-home.PNG)
+
+###Changed into onepage app
+
+Homepage
+![homepage screenshot](timeline-ss/006-onepage.PNG)
+
+Detailpage
+![detailpage screenshot](timeline-ss/006-onepage-detail.PNG)
+
+#Week 2
+
+##Progressive Web Apps
+
+###Wat is een Progressive Web App?
+Progressive Web Apps zijn een soort combinatie tussen webpagina's en apps. Ze worden gewoon gebouwd met HTML, CSS & JS maar kan wel gebruik maken van dingen als push notifications. De gebruikers 'instaleert' de app door deze toetevoegen aan hun homescherm. Progressive Web Apps kunnen ook offline worden gebruikt en kunnen de gebruikers berichtjes sturen om hun te prikkelen de app weer te gebruiken. 
+
+In een Progressive Web App wordt er gebruik gemaakt van Service Workers en een Manifest. Een Service worker kan de data die wordt gerequest opslaan in een lokale cache, zodat de app offline gebruikt kan worden. Het Manifest is een JSON bestand die beschrijft hoe je app heet en hoe het icoon er uitziet. Ook geeft je het controle over hoe de app zich gedraagt. Zo kan je zeggen of de app in een bepaalde orientatie moet worden gebruiker, of de URL balk zichtbaar moet zijn, ect.
+
+###Voordelen van Progressive Web Apps
+- Je kan de gebruiker push notifications sturen, net als normale apps
+- Je hoeft een speciale app te programeren en zijn daarom goedkoper en makkelijker te onderhouden
+- Het is nog steeds onderdeel van het web, dus kan je er gewoon naar toe linken
+- Je hoeft geen rekening te houden met de voorwaarden van de Apple App Store of Google Play Store. 
+- De gebruiker hoeft de app niet te updaten omdat de app op het web staat. De programmeur kan er dus voor zorgen dat de app automatisch update als de gebruiker hem opstart.
+
+###Nadelen van Progressive Web Apps
+- De gebruiker krijgt pas de download banner te zien nadat de gebruiker de website 2x heeft bezocht in twee weken. Dit is dus niet ideaal voor apps als spelletjes.
+- De app staat niet in de App/Play store, waardoor de gebruiker deze moeilijker kan vinden
+- Op dit moment werken Progressive Web Apps alleen op Android apparaten. 
+- Progressive Web Apps kunnen (nog) geen gebruik maken van de nieuwste technieken van devices. Zo kan je bijv. niet bij je adresboek of gebruik maken van de vingerafdruk sensoren. 
+
+
+####Bronnen
+- https://developers.google.com/web/fundamentals/getting-started/your-first-progressive-web-app/?hl=en
+- https://www.youtube.com/watch?v=MyQ8mtR9WxI&list=PLNYkxOF6rcICcHeQY02XLvoGL34rZFWZn&index=9
+- http://developer.telerik.com/featured/what-progressive-web-apps-mean-for-the-web/
+- http://www.emerce.nl/achtergrond/progressive-web-apps-de-toekomst-van-mobiele-apps
+- https://developer.mozilla.org/nl/docs/Web/HTML/Applicatie_cache_gebruiken
+- https://addyosmani.com/blog/getting-started-with-progressive-web-apps/
