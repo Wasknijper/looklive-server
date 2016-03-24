@@ -124,4 +124,10 @@ Using a [critical css generator](https://jonassebastianohlsson.com/criticalpathc
 
 ##Conclusion
 
-It is difficult to say how much performance is won by all these chances because testing results in varying results, one refresh might vary a second or so. But over
+It is difficult to say how much performance is won by all these chances because testing results in varying results, one refresh might vary a second or so.According to my own screenshots the site is 2.5 second slower then in the beginning, but the precieved  Preformance is a lot better. 
+
+Because of this I would advice look live to focus on the precieved preformance first, make sure your user sees the content ASAP, and add all the extras later. Your user is most likely coming to your site for the content, not for the font you chose. Optimizing images will help here too, always use jpg for non transparent files, png for files that need it and in case of very small transparent files gifs work even better. 
+
+The service working caching resources like headers, fonts and style sheets work well too for recurring visitors, but you shouldn't forget to update the version or else your users will not get the updates.
+
+It's best not to focus too much on things that will add or remove a couple of ms of the total loading time since the majority of the users will not or barely notice it.
