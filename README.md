@@ -105,20 +105,23 @@ De twee meest voorkomende task managers zijn Gulp en Grunt. Ik heb zelf gekozen 
 - https://medium.com/@preslavrachev/gulp-vs-grunt-why-one-why-the-other-f5d3b398edc4#.hcpzxbo4d
 - https://css-tricks.com/gulp-for-beginners/
 
-#Timeline screenshots
+##Timeline screenshots
 
-##Less HTTP-requests & optimizing images
+###Less HTTP-requests & optimizing images
 Hardly any difference noticable, since I only removed one extra call in the head (google-font). I had already merged all the JS into a single file. Also the differnce of optimized images are also not noticable, since I had already shrinked the header images and all the icons are inline. The remaining images are on a remote service and I can't optimize them. Maybe they could be served as a data-uri?
 
 ![homepage screenshot](timeline-ss/less-http-req.PNG)
 
-##Async web-font loading
+###Async web-font loading
 Using [fontfaceobserver](https://github.com/bramstein/fontfaceobserver) we load the fonts async so the user can still read the content, removing the Flash of Invisible Text.
 
 ![homepage screenshot](timeline-ss/async-fonts.PNG)
 
-##Critical CSS
+###Critical CSS
 Using a [critical css generator](https://jonassebastianohlsson.com/criticalpathcssgenerator/) and [loadCSS](https://github.com/filamentgroup/loadCSS) I included the css of above the fold in the head. Makes a lot of difference on low internet speeds.
 
 ![homepage screenshot](timeline-ss/cricital-css.PNG)
 
+##Conclusion
+
+It is difficult to say how much performance is won by all these chances because testing results in varying results, one refresh might vary a second or so. But over
