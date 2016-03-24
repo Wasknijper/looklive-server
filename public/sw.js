@@ -13,7 +13,17 @@ this.addEventListener('install', event => {
 	        	'/',
 	        	'/styles/style.css',
 	        	'/js/main.js',
-	        	'/images/header.jpg'
+	        	'/images/header.jpg',
+	        	//lets cache the fonts
+	        	'/fonts/Raleway-Regular.eot',
+	        	'/fonts/Raleway-Regular.woff',
+	        	'/fonts/Raleway-Regular.ttf',
+	        	'/fonts/Raleway-Regular.svg',
+	        	'/fonts/Raleway-Bold.eot',
+	        	'/fonts/Raleway-Bold.woff',
+	        	'/fonts/Raleway-Bold.ttf',
+	        	'/fonts/Raleway-Bold.svg'
+  
 	    	]);
 	    })
 	);
