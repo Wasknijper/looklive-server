@@ -1,10 +1,9 @@
 # MWB - Preformance Matters
-View online: https://pm.maaikehek.nl/
 
 ## Week 1
 
 ###Inital timeline
-Timeline of the orginial code.
+Running the looklive-server without any changes. A word of warning: the results vary a lot, depending on the internet connection, the amount of tabs I had open at the time of testing and how many programs I had running at the time.
 
 Homepage
 ![homepage screenshot](timeline-ss/initial-timeline-home.PNG)
@@ -13,6 +12,7 @@ Detailpage
 ![detailpage screenshot](timeline-ss/initial-timeline-detail.PNG)
 
 ###Semantic HTML
+Changing div's to semantic elements such as nav's and articles. This didn't have much impact on the rendering time or precieved preformance.
 
 Homepage
 ![homepage screenshot](timeline-ss/001-home.PNG)
@@ -21,7 +21,7 @@ Detailpage
 ![detailpage screenshot](timeline-ss/001-detail.PNG)
 
 ###Removing floats from the css
-Changed all of the floats to flexbox
+Changed floats to flexbox, again, this had barely any impact on the rendering time or the precieved preformance.
 
 Homepage
 ![homepage screenshot](timeline-ss/002-noFloats-home.PNG)
@@ -30,7 +30,7 @@ Detailpage
 ![detailpage screenshot](timeline-ss/002-noFloats-detail.PNG)
 
 ###Optimizing the header img
-.png to jpg, 2~mb > 262kb.
+This had by far one of the biggest impacts on the preformance of the website.
 
 Homepage
 ![homepage screenshot](timeline-ss/003-png2jpg-home.PNG)
@@ -38,8 +38,9 @@ Homepage
 Detailpage
 ![detailpage screenshot](timeline-ss/003-png2jpg-detail.PNG)
 
+
 ###Simplified the css selectors
-removed unnecessary specific css selecters, ie: body nav #logo > #logo
+If things have id's you dont need to make them even more specific, ie. #one is better then article #one.
 
 Homepage
 ![homepage screenshot](timeline-ss/004-simplifyCss-home.PNG)
@@ -48,7 +49,7 @@ Detailpage
 ![detailpage screenshot](timeline-ss/004-simplifyCss-detail.PNG)
 
 ###Sprites VS. Inline SVG
-Tested sprites vs. inline svg. Difference not very noticable, but means less http-requests.
+Tested inline SVG with a sprite sheet, Inline svg won by a tiny margin.
 
 Sprites
 ![homepage screenshot](timeline-ss/005-sprites-home.PNG)
@@ -57,7 +58,7 @@ Inline SVG
 ![homepage screenshot](timeline-ss/005-inlineSvg-home.PNG)
 
 ###Changed into onepage app
-Initial page is a lot slower, but the detail page loads faster.
+Makes the loading a little longer, but any other pages loads a ton faster.
 
 Homepage
 ![homepage screenshot](timeline-ss/006-onepage.PNG)
@@ -84,8 +85,8 @@ In een Progressive Web App wordt er gebruik gemaakt van Service Workers en een M
 ###Nadelen van Progressive Web Apps
 - De gebruiker krijgt pas de download banner te zien nadat de gebruiker de website 2x heeft bezocht in twee weken. Dit is dus niet ideaal voor apps als spelletjes.
 - De app staat niet in de App/Play store, waardoor de gebruiker deze moeilijker kan vinden
-- Op dit moment werken Progressive Web Apps alleen op Android apparaten. 
-- Progressive Web Apps kunnen (nog) geen gebruik maken van de nieuwste technieken van devices. Zo kan je bijv. niet bij je adresboek of gebruik maken van de vingerafdruk sensoren. 
+- Op dit moment werken Progressive Web Apps alleen op Android apparaten.
+- Progressive Web Apps kunnen (nog) geen gebruik maken van de nieuwste technieken van devices. Zo kan je bijv. niet bij je adresboek of gebruik maken van de vingerafdruk sensoren.
 
 
 ####Bronnen
@@ -98,36 +99,7 @@ In een Progressive Web App wordt er gebruik gemaakt van Service Workers en een M
 
 #Week 3
 
-##Task Managers
-De twee meest voorkomende task managers zijn Gulp en Grunt. Ik heb zelf gekozen voor Gulp omdat ik de code makkelijker te begrijpen vind, het sneller is doordat het gebruik maakt van streaming (meerdere tasks kunnen tegelijkertijd uitgevoerd worden). Grunt heeft een grotere community, maar Gulp komt snel in de buurt. Ook maakte mijn stage gebruik van Gulp in combinatie met Webpack, waardoor ik al een beetje ervaring heb met gulp.  
-
-####Bronnen
-- https://medium.com/@preslavrachev/gulp-vs-grunt-why-one-why-the-other-f5d3b398edc4#.hcpzxbo4d
-- https://css-tricks.com/gulp-for-beginners/
-
-##Timeline screenshots
-
-###Less HTTP-requests & optimizing images
-Hardly any difference noticable, since I only removed one extra call in the head (google-font). I had already merged all the JS into a single file. Also the differnce of optimized images are also not noticable, since I had already shrinked the header images and all the icons are inline. The remaining images are on a remote service and I can't optimize them. Maybe they could be served as a data-uri?
-
-![homepage screenshot](timeline-ss/less-http-req.PNG)
-
-###Async web-font loading
-Using [fontfaceobserver](https://github.com/bramstein/fontfaceobserver) we load the fonts async so the user can still read the content, removing the Flash of Invisible Text.
-
-![homepage screenshot](timeline-ss/async-fonts.PNG)
-
-###Critical CSS
-Using a [critical css generator](https://jonassebastianohlsson.com/criticalpathcssgenerator/) and [loadCSS](https://github.com/filamentgroup/loadCSS) I included the css of above the fold in the head. Makes a lot of difference on low internet speeds.
-
-![homepage screenshot](timeline-ss/cricital-css.PNG)
-
 ##Conclusion
+In the end I found that optimizing just to get the loading time down is pretty pointless. Things such as acssloader, inline-css, font face observer don't neceserally cut down the loading time, but they do make the website useable sooner and thus the user thinks the page is faster. The service worked helped too, especially caching the header image. The small css changes and js changes had very little impact at all that I could barely meassure the change.
 
-It is difficult to say how much performance is won by all these chances because testing results in varying results, one refresh might vary a second or so.According to my own screenshots the site is 2.5 second slower then in the beginning, but the precieved  Preformance is a lot better. 
-
-Because of this I would advice look live to focus on the precieved preformance first, make sure your user sees the content ASAP, and add all the extras later. Your user is most likely coming to your site for the content, not for the font you chose. Optimizing images will help here too, always use jpg for non transparent files, png for files that need it and in case of very small transparent files gifs work even better. 
-
-The service working caching resources like headers, fonts and style sheets work well too for recurring visitors, but you shouldn't forget to update the version or else your users will not get the updates.
-
-It's best not to focus too much on things that will add or remove a couple of ms of the total loading time since the majority of the users will not or barely notice it.
+Calculating all the time the loading took was hard, since it kept changing between refreshes. That was one of the reasons I felt that optimizing for the numbers was alittle pointless since I couldn't really tell if it was helping or slowing it down.
