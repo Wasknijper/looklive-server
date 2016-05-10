@@ -6,6 +6,8 @@ var cssmin = require('gulp-cssmin');
 var uglifyJs = require('gulp-uglify');
 var runSequence = require('run-sequence');
 var imagemin = require('gulp-imagemin');
+var imageminPngquant = require('imagemin-pngquant');
+var imageminMozjpeg = require('imagemin-mozjpeg');
 
 gulp.task('css', function () {
     return gulp.src('public/styles/style.css')
@@ -27,9 +29,13 @@ gulp.task('concat-scripts', function() {
 
 gulp.task('images', function(){
   return gulp.src('public/images/*.+(png|jpg|gif|svg)')
-  .pipe(imagemin())
+  .pipe(imagemin([
+      imageminPngquant({quality: '60'}),
+      imageminMozjpeg({quality: '60'})
+    ]))
   .pipe(gulp.dest('public/production/images'));
 });
+
 
 gulp.task('icons', function(){
   return gulp.src('public/icons/**/*.+(png|jpg|gif|svg)')
